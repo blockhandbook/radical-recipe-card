@@ -1,0 +1,29 @@
+{
+	"name": "recipe-card",
+	"version": "0.1.0",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"setup": "npm install && npm run server:start && npm run permalinks",
+		"clean": "npx wp-env clean",
+		"start": "npm run browser-sync",
+		"old-start": "wp-scripts start",
+		"build": "wp-scripts build --config ./webpack.prod.js && cd ./build && rm *.map",
+		"browser-sync": "browser-sync start --config ./bs-config.js",
+		"check-engines": "wp-scripts check-engines",
+		"format:js": "wp-scripts format-js",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"permalinks": "wp-env run cli wp rewrite structure /%postname%/",
+		"server:start": "npx wp-env start",
+		"server:stop": "npx wp-env stop"
+	},
+	"devDependencies": {
+		"@blockhandbook/block-hot-loader": "^1.1.9",
+		"@wordpress/env": "^1.0.1",
+		"@wordpress/scripts": "^7.1.2"
+	}
+}

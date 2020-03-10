@@ -1,0 +1,9 @@
+{
+	"core": "WordPress/WordPress#master",
+	"port": 8000,
+	"testsPort": 8001,
+	"plugins": [ 
+		"."
+	],
+	"themes": [ "WordPress/twentytwenty#master" ]
+}
