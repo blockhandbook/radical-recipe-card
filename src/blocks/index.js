@@ -21,13 +21,13 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-const name = 'radical-recipe-card/recipe-card';
+const name = 'blockhandbook/radical-recipe-card';
 const settings = {
 	/**
 	 * This is the display title for your block, which can be translated with `i18n` functions.
 	 * The block inserter will show this name.
 	 */
-	title: __( 'Recipe Card', 'radical-recipe-card' ),
+	title: __( 'Recipe Card', 'blockhandbook' ),
 
 	/**
 	 * This is a short description for your block, can be translated with `i18n` functions.
@@ -35,7 +35,7 @@ const settings = {
 	 */
 	description: __(
 		'Example block written with ESNext standard and JSX support – build step required.',
-		'radical-recipe-card'
+		'blockhandbook'
 	),
 
 	/**
@@ -87,19 +87,19 @@ const settings = {
 
 	example: {
 		attributes: {
-			title: __( 'Chocolate Chip Cookies', 'radical-recipe-card' ),
+			title: __( 'Chocolate Chip Cookies', 'blockhandbook' ),
 			mediaURL:
 				'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
 			ingredients: [
-				__( 'flour', 'radical-recipe-card' ),
-				__( 'sugar', 'radical-recipe-card' ),
-				__( 'chocolate', 'radical-recipe-card' ),
+				__( 'flour', 'blockhandbook' ),
+				__( 'sugar', 'blockhandbook' ),
+				__( 'chocolate', 'blockhandbook' ),
 				'💖',
 			],
 			instructions: [
-				__( 'Mix', 'radical-recipe-card' ),
-				__( 'Bake', 'radical-recipe-card' ),
-				__( 'Enjoy', 'radical-recipe-card' ),
+				__( 'Mix', 'blockhandbook' ),
+				__( 'Bake', 'blockhandbook' ),
+				__( 'Enjoy', 'blockhandbook' ),
 			],
 		},
 	},
@@ -144,7 +144,7 @@ const settings = {
 					tagName="h2"
 					placeholder={ __(
 						'Write Recipe title…',
-						'radical-recipe-card'
+						'blockhandbook'
 					) }
 					value={ title }
 					onChange={ onChangeTitle }
@@ -164,13 +164,13 @@ const settings = {
 								onClick={ open }
 							>
 								{ ! mediaID ? (
-									__( 'Upload Image', 'radical-recipe-card' )
+									__( 'Upload Image', 'blockhandbook' )
 								) : (
 									<img
 										src={ mediaURL }
 										alt={ __(
 											'Upload Recipe Image',
-											'radical-recipe-card'
+											'blockhandbook'
 										) }
 									/>
 								) }
@@ -178,26 +178,26 @@ const settings = {
 						) }
 					/>
 				</div>
-				<h3>{ __( 'Ingredients', 'radical-recipe-card' ) }</h3>
+				<h3>{ __( 'Ingredients', 'blockhandbook' ) }</h3>
 				<RichText
 					tagName="ul"
 					multiline="li"
 					placeholder={ __(
 						'Write a list of ingredients…',
-						'radical-recipe-card'
+						'blockhandbook'
 					) }
 					value={ ingredients }
 					onChange={ onChangeIngredients }
 					className="ingredients"
 				/>
-				<h3>{ __( 'Instructions', 'radical-recipe-card' ) }</h3>
+				<h3>{ __( 'Instructions', 'blockhandbook' ) }</h3>
 				<RichText
 					tagName="div"
 					multiline="p"
 					className="steps"
 					placeholder={ __(
 						'Write the instructions…',
-						'radical-recipe-card'
+						'blockhandbook'
 					) }
 					value={ instructions }
 					onChange={ onChangeInstructions }
@@ -227,18 +227,18 @@ const settings = {
 					<img
 						className="recipe-image"
 						src={ mediaURL }
-						alt={ __( 'Recipe Image', 'radical-recipe-card' ) }
+						alt={ __( 'Recipe Image', 'blockhandbook' ) }
 					/>
 				) }
 
-				<h3>{ __( 'Ingredients', 'radical-recipe-card' ) }</h3>
+				<h3>{ __( 'Ingredients', 'blockhandbook' ) }</h3>
 				<RichText.Content
 					tagName="ul"
 					className="ingredients"
 					value={ ingredients }
 				/>
 
-				<h3>{ __( 'Instructions', 'radical-recipe-card' ) }</h3>
+				<h3>{ __( 'Instructions', 'blockhandbook' ) }</h3>
 				<RichText.Content
 					tagName="div"
 					className="steps"
