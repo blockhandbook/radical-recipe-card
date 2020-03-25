@@ -23,8 +23,8 @@
 		"server:stop": "npx wp-env stop"
 	},
 	"devDependencies": {
-		"@blockhandbook/block-hot-loader": "^1.2.0",
+		"@blockhandbook/block-hot-loader": "^1.2.2",
 		"@wordpress/env": "^1.0.1",
-		"@wordpress/scripts": "^7.1.2"
+		"@wordpress/scripts": "^7.1.3"
 	}
 }
