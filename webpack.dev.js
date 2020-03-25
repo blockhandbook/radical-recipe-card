@@ -7,6 +7,11 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 // Hot Module Replacement
 const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
 
+// Compile block frontend and editor scss files into css files.
+const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const extractStyles = new ExtractTextPlugin( './style.css' );
+const extractEditorStyles = new ExtractTextPlugin( './editor.css' );
+
 // Remove LiveReloadPlugin if in development mode
 const defaultPlugins = defaultConfig.plugins.map( ( plugin ) => {
 	if ( plugin.constructor.name.includes( 'LiveReloadPlugin' ) ) {
