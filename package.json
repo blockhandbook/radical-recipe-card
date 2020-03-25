@@ -1,28 +1,29 @@
 {
 	"name": "recipe-card",
 	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"description": "A radical card for sharing recipes.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"setup": "npm install && npm run server:start && npm run permalinks",
-		"clean": "npx wp-env clean",
+		"setup": "npm install && npm run build && npm run server:start && npm run permalinks && npm run install:gutenberg && npm run start",
+		"clean": "npx wp-env clean all && npm run server:stop && rm -rf node_modules",
 		"start": "npm run browser-sync",
 		"old-start": "wp-scripts start",
 		"build": "wp-scripts build --config ./webpack.prod.js && cd ./build && rm *.map",
 		"browser-sync": "browser-sync start --config ./bs-config.js",
 		"check-engines": "wp-scripts check-engines",
+		"install:gutenberg": "wp-env run cli wp plugin install gutenberg && wp-env run cli wp plugin activate gutenberg",
 		"format:js": "wp-scripts format-js",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
-		"permalinks": "wp-env run cli wp rewrite structure /%postname%/",
-		"server:start": "npx wp-env start",
+		"permalinks": "wp-env run cli wp rewrite structure /%postname%/ --hard",
+		"server:start": "npx wp-env start && npm run install:gutenberg",
 		"server:stop": "npx wp-env stop"
 	},
 	"devDependencies": {
-		"@blockhandbook/block-hot-loader": "^1.1.9",
+		"@blockhandbook/block-hot-loader": "^1.2.0",
 		"@wordpress/env": "^1.0.1",
 		"@wordpress/scripts": "^7.1.2"
 	}
